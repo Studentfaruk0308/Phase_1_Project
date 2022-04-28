@@ -45,15 +45,3 @@ fetch("string representing a URL to a data source")
 .then(function(json) {
   console.log(json)
 });
-
-
-function tryAgain(questionIndex){
-  if (questionIndex = myQuestions.length-1){
-    displayQuestion(0);
-  };
-  const tryAgaincontainer = document.createElementById('tryAgaincontainer');
-  tryAgaincontainer.innerHTML = 
-  `<div>
-  <button id="tryAgaincontainer" class="btn btn-primary btn-block" onclick="trayAgain();">Try Again</button> 
-</div>`
-}

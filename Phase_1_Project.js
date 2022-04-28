@@ -1,13 +1,20 @@
 let totalScore = 0;
 let questions = [];
 
-fetch('https://the-trivia-api.com/api/questions')
+const EMPTY_HEART = '♡'
+const FULL_HEART = '♥'
+
+document.addEventListener('DOMContentLoaded', function(){
+  fetch('https://the-trivia-api.com/api/questions')
   .then((response) => response.json())
   .then((json) => {
     questions = json
   })
   .then(() => console.log(questions))
   .catch((error) => console.warn(error))
+});
+
+
 
 // https://javascript.info/array-methods#shuffle-an-array
 function shuffle(array) {
@@ -70,6 +77,32 @@ function tryAgain(){
   totalScore = 0;
   startQuiz()
 };
+
+// from https://github.com/Studentfaruk0308/fewpjs-build-the-example/blob/master/main.js
+
+function mimicServerCall(url="http://mimicServer.example.com", config={}) {
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      let isRandomFailure = Math.random() < .2
+      if (isRandomFailure) {
+        reject("Random server error. Try again.");
+      } else {
+        resolve("Pretend remote server notified of action!");
+      }
+    }, 300);
+  });
+}
+
+function like(){
+  const likeButton = document.getElementById("like");
+  likeButton.innerHTML = '<div class="loader"></div>'
+  mimicServerCall()
+    .then(()=>{ likeButton.innerHTML=`${FULL_HEART}`})
+    .catch((error)=>{ 
+      alert(error)
+      likeButton.innerHTML=`error ${EMPTY_HEART}`
+    })
+}
 
 /*const myQuestions = 
 [
