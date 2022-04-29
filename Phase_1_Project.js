@@ -3,6 +3,7 @@ let questions = [];
 
 
 const externalUrl = 'https://the-trivia-api.com/api/questions'
+const localUrl = 'http://localhost:3000/questions'
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
