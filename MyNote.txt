@@ -225,11 +225,11 @@ fetch('db.json').then(function (response){
 //getting the data from API
 
 
-const api_url = 
 async function getQuestion(){
   const response = await fetch(api_url);
   const data = await response.json();
   console.log(data);
 };
 
-getQuestion();
+Json Server Video:
+https://www.youtube.com/watch?v=NM4gB8J1uF4
