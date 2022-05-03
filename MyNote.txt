@@ -233,3 +233,35 @@ async function getQuestion(){
 
 Json Server Video:
 https://www.youtube.com/watch?v=NM4gB8J1uF4
+
+
+
+
+
+
+
+<form class="form-inline" action="/action_page.php">
+  <label for="FullName">Full Name:</label>
+  <input type="FullName" id="FullName" placeholder="Enter Full Name" name="FullName">
+  <label for="Mobile">Mobile:</label>
+  <input type="MobileNumber" id="MobileNumber" placeholder="Enter Mobile Number" name="MobileNumber">
+  <label for="totalScore">Total Score:</label>
+  <input type="totalScore" id="totalScore" placeholder="Total Score" name="totalScore">
+  <button id="dataSubmit">Submit</button>
+</form>
+
+.form-inline label {
+	margin: 5px 10px 5px 5px;
+	font-size: large;
+	color: red;
+  }
+  
+  .form-inline input {
+	vertical-align: middle;
+	margin: 5px 10px 5px 6px;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	font-size: large;
+	color: red
+  }
