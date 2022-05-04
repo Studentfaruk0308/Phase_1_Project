@@ -1,16 +1,10 @@
 {
   "userData": [
     {
-      "fullName": "Md Faruk Ahmed",
-      "mobileNumber": "456456",
-      "totalScore": 4,
-      "id": 1
-    },
-    {
       "fullName": "656456",
       "mobileNumber": "456456",
-      "totalScore": 2,
-      "id": 2
+      "totalScore": 0,
+      "id": 1
     }
   ],
   "questions": [

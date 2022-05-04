@@ -91,13 +91,6 @@ function saveData(userData){
 }
 
 function displayResult() {
-  // Save result to database
-  const userData = {
-    "fullName": fullName, 
-    "mobileNumber": mobileNumber, 
-    "totalScore": totalScore
-  }
-  saveData(userData);
   
   // Show Result
   const quizContainer = document.getElementById('question-answer');
@@ -105,8 +98,14 @@ function displayResult() {
   <div class="col-sm-12">
     YOUR TOTAL CORRECTED ANSWER IS ${totalScore} OUT OF ${questions.length}
   </div>
-  <button class="col-sm-12" onclick="tryAgain()">CLICK HERE TO TRY AGAIN</button>
   `
+  // Save result to database
+  const userData = {
+    "fullName": fullName, 
+    "mobileNumber": mobileNumber, 
+    "totalScore": totalScore
+  }
+  saveData(userData);
 };
 
 function tryAgain(){
