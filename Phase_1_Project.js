@@ -113,6 +113,103 @@ function tryAgain(){
   startQuiz()
 };
 
+let userData =[];
+
+function allUsers(){
+  fetch("http://localhost:3000/userData")
+  .then((response) => response.json())
+  .then((json) => {
+  userData = json
+})
+.then(() => createTable())
+.then(() => console.log(userData))
+};
+
+
+function createTable(){
+// let userData = [
+//   {
+//     "fullName": "656456",
+//     "mobileNumber": "456456",
+//     "totalScore": 0,
+//     "id": 1
+//   },
+//   {
+//     "fullName": "Demo Name",
+//     "mobileNumber": "123456",
+//     "totalScore": 5,
+//     "id": 2
+//   },
+//   {
+//     "fullName": "opop",
+//     "mobileNumber": "0432220",
+//     "totalScore": 3,
+//     "id": 9
+//   }
+// ]
+
+let col = [];
+for (let i = 0; i < userData.length; i++){
+  for (let key in userData[i]){
+    if (col.indexOf(key) === -1){
+      col.push(key);
+    }
+  }
+}
+
+let table = document.createElement("table");
+
+let tr = table.insertRow(-1);
+
+for (let i = 0; i < col.length; i++){
+  var th = document.createElement("th");
+  th.innerHTML = col[i];
+  tr.appendChild(th);
+}
+
+for (let i = 0; i < userData.length; i++){
+  tr = table.insertRow(-1);
+  for (let j=0; j < col.length; j++){
+  let tabCell = tr.insertCell(-1);
+  tabCell.innerHTML = userData[i][col[j]]; 
+  }
+}
+
+let userContainer = document.getElementById("userContainer");
+userContainer.innerHTML = "";
+userContainer.appendChild(table);
+}
+
+
+// const allUsers=document.querySelector("#allUsers");
+    // const userName=document.createElement("li");
+    // userName.innerHTML="Demo"
+    // allUsers.append(userName);
+    // console.log(json)
+
+// https://www.encodedna.com/javascript/populate-json-data-to-html-table-using-javascript.htm
+// let userContainer = document.querySelector("#userContainer");
+
+// let table = document.createElement("User-Table");
+// table.setAttribute("id","myTable");
+// document.body.appendChild(table);
+
+// let row = document.createElement("TR");
+// row.setAttribute("id", "myTR");
+// document.getElementById("myTable").appendChild(row);
+
+// let td = document.createElement("TD");
+// document.getElementById("myTR").appendChild(td);
+
+
+  // .then(function(response) {
+  //   return response.json();
+  // })
+  // .then(function(object) {
+  //   console.log(object);
+  // })
+
+
 
 // -------------------------------------------------------------------
 // Like function
